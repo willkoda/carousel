@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Carousel from './components/Carousel/Carousel';
+
+import characters from '../src/assets/images/characters.jpg';
+import lifeSucks from '../src/assets/images/life-sucks.gif';
+import openning from '../src/assets/images/opening.jpg';
+import finnAndJake from '../src/assets/images/finn-and-jake.jpg';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Carousel
+                type="image--carousel"
+                // images={[openning, lifeSucks, characters, finnAndJake]}
+                images={[
+                    'https://unsplash.it/1280/768',
+                    'https://unsplash.it/1281/768',
+                    'https://unsplash.it/1282/768',
+                    'https://unsplash.it/1283/768'
+                ]}
+            />
+            <button onClick={() => alert('button works!')} >Click me!</button>
+        </div>
+    );
 }
 
 export default App;
